@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Kursach">
+
+    <Color x:Key="MainBackgroundDark">#0A0747</Color>
+    <SolidColorBrush x:Key="MainBackgroundDarkBrush" Color="{StaticResource MainBackgroundDark}"/>
+
+    <Color x:Key="MainBackgroundUltraDark">#050427</Color>
+    <SolidColorBrush x:Key="MainBackgroundUltraDarkBrush" Color="{StaticResource MainBackgroundUltraDark}"/>
+    
+    <Color x:Key="MainForegroundLight">#F6F6F6</Color>
+    <SolidColorBrush x:Key="MainForegroundLightBrush" Color="{StaticResource MainForegroundLight}"/>
+
+    
+</ResourceDictionary>
