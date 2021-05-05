@@ -13,7 +13,7 @@ namespace Kursach
         /// <summary>
         /// Store Main Form Window
         /// </summary>
-        private Window _mainWindow;
+        private static Window _mainWindow;
 
         /// <summary>
         /// Outer margin around window to drop shadow + window border radius
@@ -24,6 +24,12 @@ namespace Kursach
         #endregion
 
         #region Public Properties
+
+        /// <summary>
+        /// Min width and height for window
+        /// </summary>
+        public double WindowMinWidth { get; set; } = 1200;
+        public double WindowMinHeight { get; set; } = 700;
 
         /// <summary>
         /// The value of resize border thickness
@@ -63,9 +69,13 @@ namespace Kursach
         /// <summary>
         /// The height of the window heading
         /// </summary>
-        public int TitleHeight { get; set; } = 20;
+        public int TitleHeight { get; set; } = 16;
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
 
+        public static Window MainWindow
+        {
+            get { return _mainWindow; }
+        }
 
         #endregion
 
@@ -74,22 +84,22 @@ namespace Kursach
         /// <summary>
         /// Minimize Window Command
         /// </summary>
-        public RelayCommand MinimizeCommand;
+        public RelayCommand MinimizeCommand { get; set; }
 
         /// <summary>
         /// Maximize Window Command
         /// </summary>
-        public RelayCommand MaximizeCommand;
+        public RelayCommand MaximizeCommand { get; set; }
 
         /// <summary>
         /// Close Window Command
         /// </summary>
-        public RelayCommand CloseCommand;
+        public RelayCommand CloseCommand { get; set; }
 
         /// <summary>
         /// Open Window Menu Command
         /// </summary>
-        public RelayCommand MenuCommand;
+        public RelayCommand MenuCommand { get; set; }
 
         #endregion
 
@@ -115,10 +125,12 @@ namespace Kursach
                 {
                     _mainWindow.WindowState = WindowState.Maximized;
                 }
-                else return;
+                else _mainWindow.WindowState = WindowState.Normal;
             });
             CloseCommand = new RelayCommand(() => _mainWindow.Close());
-            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(_mainWindow, Mouse.GetPosition(_mainWindow)));
+
+            // Fix Window Resize Issue
+            var resizer = new WindowResizer(_mainWindow);
         }
     }
 }

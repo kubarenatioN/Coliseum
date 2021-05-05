@@ -1,0 +1,98 @@
+﻿<Page x:Class="Kursach.Views.UserOwnPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursach"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1900"
+      Title="UserOwnPage">
+
+    <ScrollViewer Name="scrollViewer">
+        
+        <StackPanel Background="{DynamicResource CustomBlackBrush}">
+
+            <local:BannerControl 
+                BannerTitle="{Binding Nickname}"
+                BannerSubtitle="Manage your own profile"
+                BannerImageSource="{Binding UserBannerImage, 
+                Converter={StaticResource imagePathConverterJpeg},
+                ConverterParameter='../Images/UserBanners'}"
+                BannerImageAlignmentY="Center"
+                ContentAlignment="Center"
+                Height="{Binding 
+                    ElementName=scrollViewer,
+                    Path=ViewportHeight, 
+                    Converter={StaticResource viewportHeightConverter},
+                    ConverterParameter='2,5'}"/>
+
+            <!-- Other Page's content border -->
+            <Border
+                Padding="20">
+                <StackPanel>
+
+                    <TextBlock 
+                        Text="Personal Info"
+                        Style="{StaticResource PageSectionTitle}"/>
+
+                    <Grid 
+                        Margin="0 0 0 40"
+                        >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="{Binding PaddingLeft}"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Nickname"/>
+                            <TextBox/>
+                        </StackPanel>
+
+                        <StackPanel 
+                                Grid.Column="2">
+                            <TextBlock Text="Email"/>
+                            <TextBox/>
+                        </StackPanel>
+
+                        <StackPanel
+                                Grid.Column="4">
+                            <TextBlock Text="Phone number"/>
+                            <TextBox/>
+                        </StackPanel>
+                    </Grid>
+
+                    <TextBlock 
+                        Foreground="{DynamicResource MainForegroundLightBrush}"
+                        Text="Your Games"
+                        Style="{StaticResource PageSectionTitle}"/>
+
+                    <Grid>
+                        <!-- Display Game Items as grid -->
+                        <ItemsControl
+                            Visibility="{Binding GamesVisibility}"
+                            ItemsSource="{Binding UserGameItems}"
+                            Style="{StaticResource TileItemsControlShort}"/>
+
+                        <Border
+                            Visibility="{Binding NoGamesSignVisibility}"
+                            MinHeight="200">
+                            <TextBlock 
+                                Foreground="{DynamicResource MainForegroundLightBrush}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="No Games Yet..."/>
+                        </Border>
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+    </ScrollViewer>
+
+</Page>

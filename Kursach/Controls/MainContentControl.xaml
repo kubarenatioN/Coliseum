@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Kursach.MainContentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:Kursach"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="576">
+
+    <Grid Background="{DynamicResource CustomBlackBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <local:WindowHeaderControl 
+            x:Name="header"
+            Height="63"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
+
+            <Border 
+                Background="{DynamicResource MainBackgroundUltraDarkBrush}"
+                Grid.Column="0">
+                <StackPanel>
+
+                    <RadioButton 
+                        Style="{StaticResource SideMenuButton}" 
+                        IsChecked="True"
+                        Command="{Binding OpenHomePage}">
+                        <!-- Use Interaction.Triggers with PreviewMouseLeftButtonDown event
+                            to perform CanExecute before IsChecked property applied -->
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                <i:InvokeCommandAction 
+                                    Command="{Binding OpenHomePage}"
+                                    CommandParameter="{Binding IsChecked, 
+                                    RelativeSource={RelativeSource 
+                                    FindAncestor, 
+                                    AncestorType={x:Type RadioButton}}}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                        <local:SideMenuRadioButton 
+                            ItemImage="{StaticResource HomeIconGeometry}"
+                            ItemTitle="HOME"/>
+                    </RadioButton>
+
+                    <RadioButton 
+                        Style="{StaticResource SideMenuButton}"
+                        Command="{Binding OpenGamesPage}">
+                        <local:SideMenuRadioButton 
+                            ItemImage="{StaticResource GamesIconGeometry}"
+                            ItemTitle="GAMES"/>
+                    </RadioButton>
+
+                    <RadioButton 
+                        Style="{StaticResource SideMenuButton}"
+                        Command="{Binding OpenNewsPage}">
+                        <local:SideMenuRadioButton 
+                            ItemImage="{StaticResource HomeIconGeometry}"
+                            ItemTitle="NEWS"/>
+                    </RadioButton>
+
+                    <RadioButton 
+                        Style="{StaticResource SideMenuButton}"
+                        Command="{Binding OpenEventsPage}">
+                        <local:SideMenuRadioButton 
+                            ItemImage="{StaticResource HomeIconGeometry}"
+                            ItemTitle="EVENTS"/>
+                    </RadioButton>
+
+                    <RadioButton 
+                        Style="{StaticResource SideMenuButton}"
+                        Command="{Binding OpenTeamsPage}">
+                        <local:SideMenuRadioButton 
+                            ItemImage="{StaticResource HomeIconGeometry}"
+                            ItemTitle="TEAMS"/>
+                    </RadioButton>
+
+                </StackPanel>
+            </Border>
+
+            <Border 
+                Grid.Column="1">
+                <Frame 
+                    Padding="10"
+                    NavigationUIVisibility="Hidden"
+                    ClipToBounds="True"
+                    Content="{Binding CurrentPage}"/>
+
+            </Border>
+
+            <local:MatesSidebarControl 
+                x:Name="sidebar"
+                Grid.Column="2"/>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,68 @@
+﻿<Page x:Class="Kursach.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursach"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+
+    <ScrollViewer Name="scrollViewer" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+
+            <local:BannerControl 
+                OpenPageCommand="{Binding MainBannerOpenPage}"
+                BannerTitle="Some Title"
+                BannerSubtitle="Banner pretty subtitle"
+                BannerImageSource="../Images/test.jpg"
+                BannerImageAlignmentY="Top"
+                ContentAlignment="Right"
+                Height="{Binding 
+                    ElementName=scrollViewer,
+                    Path=ViewportHeight, 
+                    Converter={StaticResource viewportHeightConverter},
+                    ConverterParameter='2,5'}"/>
+
+            <TextBlock 
+                Grid.Row="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="42"
+                Foreground="{DynamicResource MainForegroundLightBrush}"
+                Text="{Binding TextBlock1Text}"/>
+
+            <ItemsControl 
+                ScrollViewer.CanContentScroll="False"
+                ItemsSource="{Binding GamesInitialCollection}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Developer}"/>
+                            <TextBlock Text="{Binding ReleaseDate}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <Button Content="Test color" Command="{Binding TestColor}"/>
+
+            <Button Content="Load something from database" Command="{Binding LoadFromDB}"/>
+
+            <ListBox ItemsSource="{Binding TestCollection}"/>
+
+            <Border Height="50" Background="LightSalmon"/>
+
+            <ListBox ItemsSource="{Binding TestCollection2}"/>
+
+            <ListBox ItemsSource="{Binding EventsInitialCollection}"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

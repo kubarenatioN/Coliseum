@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Kursach">
+
+    <local:ViewportConverter x:Key="viewportHeightConverter"/>
+    <local:ImagePathConverter x:Key="imagePathConverter"/>
+    <local:ImagePathConverterPng x:Key="imagePathConverterPng"/>
+    <local:ImagePathConverterJpeg x:Key="imagePathConverterJpeg"/>
+    <BitmapImage x:Key="FallbackPageHeaderImage" UriSource="../Images/PagesHeaderImages/1.jpg" />
+
+</ResourceDictionary>

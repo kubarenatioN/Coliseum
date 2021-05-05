@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.UI.Xaml.2.5.0\build\Microsoft.UI.Xaml.props" Condition="Exists('..\packages\Microsoft.UI.Xaml.2.5.0\build\Microsoft.UI.Xaml.props')" />
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.12\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.12\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
   <Import Project="..\packages\PropertyChanged.Fody.2.6.1\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.2.6.1\build\PropertyChanged.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -38,11 +40,137 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient, Version=1.13.20136.2, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.1.1.3\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Proxies, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Proxies.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Proxies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.3.1.12\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.12\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.12\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.12\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.5.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.5.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.5.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.5.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.5.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PropertyChanged, Version=2.6.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.2.6.1\lib\net452\PropertyChanged.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.5.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,8 +189,300 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animations\Animations.cs" />
+    <Compile Include="Animations\PageAnimation.cs" />
+    <Compile Include="Animations\Storyboards.cs" />
+    <Compile Include="Controls\ArticleItemControl.xaml.cs">
+      <DependentUpon>ArticleItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BannerControl.xaml.cs">
+      <DependentUpon>BannerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EventItemControl.xaml.cs">
+      <DependentUpon>EventItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FriendControl.xaml.cs">
+      <DependentUpon>FriendControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameItemControl.xaml.cs">
+      <DependentUpon>GameItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainContentControl.xaml.cs">
+      <DependentUpon>MainContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MatesSidebarControl.xaml.cs">
+      <DependentUpon>MatesSidebarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHeaderControl.xaml.cs">
+      <DependentUpon>PageHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayerItemControl.xaml.cs">
+      <DependentUpon>PlayerItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SideMenuRadioButton.xaml.cs">
+      <DependentUpon>SideMenuRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TeamItemControl.xaml.cs">
+      <DependentUpon>TeamItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TeamItemSquareControl.xaml.cs">
+      <DependentUpon>TeamItemSquareControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WindowHeaderControl.xaml.cs">
+      <DependentUpon>WindowHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ImagePathConverter.cs" />
+    <Compile Include="Converters\ImagePathConverterJpeg.cs" />
+    <Compile Include="Converters\ImagePathConverterPng.cs" />
+    <Compile Include="Converters\ViewportConverter.cs" />
+    <Compile Include="EntityFramework\ColiseumDbContext.cs" />
+    <Compile Include="EntityFramework\Repository.cs" />
+    <Compile Include="EntityFramework\UnitOfWork.cs" />
+    <Compile Include="Helpers\ExplicitLoaders.cs" />
+    <Compile Include="Helpers\ImageConverter.cs" />
+    <Compile Include="Helpers\PathConverters.cs" />
+    <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Migrations\20210306200651_initial.cs" />
+    <Compile Include="Migrations\20210306200651_initial.designer.cs">
+      <DependentUpon>20210306200651_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210307094846_addNullableDates.cs" />
+    <Compile Include="Migrations\20210307094846_addNullableDates.designer.cs">
+      <DependentUpon>20210307094846_addNullableDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210307104736_addEventImageField.cs" />
+    <Compile Include="Migrations\20210307104736_addEventImageField.designer.cs">
+      <DependentUpon>20210307104736_addEventImageField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210307182035_Game_GameImages_reference.cs" />
+    <Compile Include="Migrations\20210307182035_Game_GameImages_reference.designer.cs">
+      <DependentUpon>20210307182035_Game_GameImages_reference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210310163827_articleModel.cs" />
+    <Compile Include="Migrations\20210310163827_articleModel.designer.cs">
+      <DependentUpon>20210310163827_articleModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210310172615_articleModeladdImage.cs" />
+    <Compile Include="Migrations\20210310172615_articleModeladdImage.designer.cs">
+      <DependentUpon>20210310172615_articleModeladdImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210310202629_addTeamsOrganizations.cs" />
+    <Compile Include="Migrations\20210310202629_addTeamsOrganizations.designer.cs">
+      <DependentUpon>20210310202629_addTeamsOrganizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210311165558_virtualOrganizationField.cs" />
+    <Compile Include="Migrations\20210311165558_virtualOrganizationField.designer.cs">
+      <DependentUpon>20210311165558_virtualOrganizationField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210311174501_addGameOrgLogo.cs" />
+    <Compile Include="Migrations\20210311174501_addGameOrgLogo.designer.cs">
+      <DependentUpon>20210311174501_addGameOrgLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210312093255_addPlayerTeamGameLinks.cs" />
+    <Compile Include="Migrations\20210312093255_addPlayerTeamGameLinks.designer.cs">
+      <DependentUpon>20210312093255_addPlayerTeamGameLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210312094424_playerNickname.cs" />
+    <Compile Include="Migrations\20210312094424_playerNickname.designer.cs">
+      <DependentUpon>20210312094424_playerNickname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210312100025_playerBirthdayNullable.cs" />
+    <Compile Include="Migrations\20210312100025_playerBirthdayNullable.designer.cs">
+      <DependentUpon>20210312100025_playerBirthdayNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210422205629_add User stuff.cs" />
+    <Compile Include="Migrations\20210422205629_add User stuff.designer.cs">
+      <DependentUpon>20210422205629_add User stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210422211057_add Friendships.cs" />
+    <Compile Include="Migrations\20210422211057_add Friendships.designer.cs">
+      <DependentUpon>20210422211057_add Friendships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210424080300_add Nickname field.cs" />
+    <Compile Include="Migrations\20210424080300_add Nickname field.designer.cs">
+      <DependentUpon>20210424080300_add Nickname field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210425155943_add Games-Users connection.cs" />
+    <Compile Include="Migrations\20210425155943_add Games-Users connection.designer.cs">
+      <DependentUpon>20210425155943_add Games-Users connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210426142505_fix Friendship model.cs" />
+    <Compile Include="Migrations\20210426142505_fix Friendship model.designer.cs">
+      <DependentUpon>20210426142505_fix Friendship model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210428125722_Refactor Friendships model.cs" />
+    <Compile Include="Migrations\20210428125722_Refactor Friendships model.designer.cs">
+      <DependentUpon>20210428125722_Refactor Friendships model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210502173101_update Event model.cs" />
+    <Compile Include="Migrations\20210502173101_update Event model.designer.cs">
+      <DependentUpon>20210502173101_update Event model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210502181945_add EventsTeams model.cs" />
+    <Compile Include="Migrations\20210502181945_add EventsTeams model.designer.cs">
+      <DependentUpon>20210502181945_add EventsTeams model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ColiseumDbContextModelSnapshot.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ColorTheme.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventsTeams.cs" />
+    <Compile Include="Models\Friendship.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameImages.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAccountInfo.cs" />
+    <Compile Include="Models\UserPublicInfo.cs" />
+    <Compile Include="Models\UsersGames.cs" />
+    <Compile Include="Resources\ImageResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ArticleItemViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePageViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\EventItemViewModel.cs" />
+    <Compile Include="ViewModels\EventPageViewModel.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="ViewModels\FriendItemViewModel.cs" />
+    <Compile Include="ViewModels\MatesSidebarViewModel.cs" />
+    <Compile Include="ViewModels\PlayerItemViewModel.cs" />
+    <Compile Include="ViewModels\PlayerPageViewModel.cs" />
+    <Compile Include="ViewModels\TeamItemSquareViewModel.cs" />
+    <Compile Include="ViewModels\TeamPageViewModel.cs" />
+    <Compile Include="ViewModels\GameItemViewModel.cs" />
+    <Compile Include="ViewModels\GamePageViewModel.cs" />
+    <Compile Include="ViewModels\GamesViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LoginStartPageViewModel.cs" />
+    <Compile Include="ViewModels\MainContentViewModel.cs" />
+    <Compile Include="ViewModels\NewsViewModel.cs" />
+    <Compile Include="ViewModels\SignupPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\TeamItemViewModel.cs" />
+    <Compile Include="ViewModels\TeamsViewModel.cs" />
+    <Compile Include="ViewModels\UserPageViewModel.cs" />
+    <Compile Include="ViewModels\UserOwnPageViewModel.cs" />
+    <Compile Include="ViewModels\WindowHeaderViewModel.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
+    <Compile Include="Views\ArticlePage.xaml.cs">
+      <DependentUpon>ArticlePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventPage.xaml.cs">
+      <DependentUpon>EventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamesPage.xaml.cs">
+      <DependentUpon>GamesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsPage.xaml.cs">
+      <DependentUpon>NewsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindowStartPage.xaml.cs">
+      <DependentUpon>LoginWindowStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerPage.xaml.cs">
+      <DependentUpon>PlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamPage.xaml.cs">
+      <DependentUpon>TeamPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamsPage.xaml.cs">
+      <DependentUpon>TeamsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\WindowResizer.cs" />
+    <Compile Include="Views\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserOwnPage.xaml.cs">
+      <DependentUpon>UserOwnPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Articles\2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Articles\clear-template.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Articles\1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ArticleItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BannerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EventItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FriendControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GameItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MainContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MatesSidebarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PageHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlayerItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SideMenuRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TeamItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TeamItemSquareControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WindowHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +496,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\Colors-light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\CustomControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Window.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +529,70 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArticlePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindowStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeamPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeamsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UserOwnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +615,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ImageResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <Resource Include="Fonts\Roboto-Black.ttf" />
     <Resource Include="Fonts\Roboto-BlackItalic.ttf" />
     <Resource Include="Fonts\Roboto-Bold.ttf" />
@@ -127,6 +631,7 @@
     <Resource Include="Fonts\Roboto-Regular.ttf" />
     <Resource Include="Fonts\Roboto-Thin.ttf" />
     <Resource Include="Fonts\Roboto-ThinItalic.ttf" />
+    <Resource Include="Fonts\Font Awesome-Solid-900.otf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,6 +647,54 @@
   <ItemGroup>
     <Resource Include="FodyWeaver.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\EventItemImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OrganizationLogos\7.png" />
+    <Resource Include="Images\Icons\helmet-01.png" />
+    <Resource Include="Images\Icons\helmet-02.png" />
+    <Resource Include="Images\Icons\helmet-03.png" />
+    <Resource Include="Images\Icons\helmet-04.png" />
+    <Resource Include="Images\Icons\helmet-05.png" />
+    <Resource Include="Images\Icons\helmet-06.png" />
+    <Resource Include="Images\Icons\helmet-07.png" />
+    <Resource Include="Images\EventBannerImages\1.jpg" />
+    <Content Include="Images\Icons\user-default-avatar.svg" />
+    <Resource Include="Images\UserBanners\1.jpg" />
+    <Resource Include="Images\PlayerPhotos\1.jpg" />
+    <Resource Include="Images\PagesHeaderImages\3.jpg" />
+    <Resource Include="Images\PagesHeaderImages\2.jpg" />
+    <Resource Include="Images\PagesHeaderImages\1.jpg" />
+    <Resource Include="Images\PagesHeaderImages\4.jpg" />
+    <Resource Include="Images\PagesHeaderImages\1-1.jpg" />
+    <Resource Include="Images\PagesHeaderImages\teams.jpg" />
+    <Resource Include="Images\OrganizationLogos\1.png" />
+    <Resource Include="Images\OrganizationLogos\2.png" />
+    <Resource Include="Images\OrganizationLogos\3.png" />
+    <Resource Include="Images\OrganizationLogos\4.png" />
+    <Resource Include="Images\OrganizationLogos\5.png" />
+    <Resource Include="Images\OrganizationLogos\6.png" />
+    <Resource Include="Images\PagesHeaderImages\news.jpg" />
+    <Resource Include="Images\PagesHeaderImages\games.jpg" />
+    <Resource Include="Images\GameItemsImages\1.jpg" />
+    <Resource Include="Images\GameItemsImages\2.jpg" />
+    <Resource Include="Images\GameItemsImages\3.jpg" />
+    <Resource Include="Images\GameItemsImages\4.jpg" />
+    <Resource Include="Articles\Images\img-test.jpg" />
+    <Resource Include="Images\NewsItemsImages\1.jpg" />
+    <Resource Include="Images\NewsItemsImages\2.jpg" />
+    <Resource Include="Images\NewsItemsImages\3.jpg" />
+    <Resource Include="Images\NewsItemsImages\4.jpg" />
+    <Resource Include="Articles\Images\2.jpg" />
+    <Resource Include="Images\GameLogos\1.png" />
+    <Resource Include="Images\GameLogos\2.png" />
+    <Resource Include="Images\GameLogos\3.png" />
+    <Resource Include="Images\GameLogos\4.png" />
+    <Resource Include="Images\test.jpg" />
+    <Content Include="Images\Icons\home.svg" />
+    <Resource Include="Images\avatar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.2.1\build\Fody.targets" Condition="Exists('..\packages\Fody.4.2.1\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -150,5 +703,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.4.2.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.2.1\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\PropertyChanged.Fody.2.6.1\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.2.6.1\build\PropertyChanged.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.12\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.12\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.UI.Xaml.2.5.0\build\Microsoft.UI.Xaml.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.UI.Xaml.2.5.0\build\Microsoft.UI.Xaml.props'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Kursach.SideMenuRadioButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Kursach"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+
+    <StackPanel>
+        <!-- Showing the property value -->
+        <Viewbox 
+            Height="40"
+            Stretch="Uniform" 
+            Width="{Binding Height, RelativeSource={RelativeSource Self}}">
+            <Path 
+                Fill="{Binding 
+                        RelativeSource={RelativeSource 
+                        Mode=FindAncestor,
+                        AncestorType={x:Type RadioButton}},
+                        Path=Foreground}"                
+                Data="{Binding
+                        RelativeSource={RelativeSource 
+                        Mode=FindAncestor,
+                        AncestorType={x:Type local:SideMenuRadioButton}}, 
+                        Path=ItemImage}"/>
+        </Viewbox>
+
+        <TextBlock 
+            FontFamily="{StaticResource RobotoBold}"
+            FontWeight="Bold"
+            Text="{Binding
+                    RelativeSource={RelativeSource 
+                    Mode=FindAncestor,
+                    AncestorType={x:Type local:SideMenuRadioButton}}, 
+                    Path=ItemTitle}"
+            TextAlignment="Center"
+            Margin="0 4 0 0"
+            FontSize="14"
+            />
+    </StackPanel>
+    
+</UserControl>

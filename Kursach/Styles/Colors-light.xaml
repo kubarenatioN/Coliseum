@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Kursach">
+
+    <Color x:Key="CustomBlack">#fff</Color>
+    <SolidColorBrush x:Key="CustomBlackBrush" Color="{StaticResource CustomBlack}"/>
+
+    <Color x:Key="CustomOpacityBlack">#7Dffffff</Color>
+    <SolidColorBrush x:Key="CustomOpacityBlackBrush" Color="{StaticResource CustomOpacityBlack}"/>
+
+    <Color x:Key="MainBackgroundDark">#fefefe</Color>
+    <SolidColorBrush x:Key="MainBackgroundDarkBrush" Color="{StaticResource MainBackgroundDark}"/>
+
+    <Color x:Key="MainBackgroundUltraDark">#ccc</Color>
+    <SolidColorBrush x:Key="MainBackgroundUltraDarkBrush" Color="{StaticResource MainBackgroundUltraDark}"/>
+
+    <!--<Color x:Key="MainBackgroundLightDark">#030599</Color>
+    <SolidColorBrush x:Key="MainBackgroundLightDarkBrush" Color="{StaticResource MainBackgroundLightDark}"/>-->
+
+    <Color x:Key="MainForegroundLight">#010101</Color>
+    <SolidColorBrush x:Key="MainForegroundLightBrush" Color="{StaticResource MainForegroundLight}"/>
+
+    <Color x:Key="MainForegroundLightGrey">#232323</Color>
+    <SolidColorBrush x:Key="MainForegroundLightGreyBrush" Color="{StaticResource MainForegroundLightGrey}"/>
+
+    <Color x:Key="MainForegroundGrey">#333</Color>
+    <SolidColorBrush x:Key="MainForegroundGreyBrush" Color="{StaticResource MainForegroundGrey}"/>
+
+    <Color x:Key="DangerRedColor">#D30C15</Color>
+    <SolidColorBrush x:Key="DangerRedColorBrush" Color="{StaticResource DangerRedColor}"/>
+
+</ResourceDictionary>

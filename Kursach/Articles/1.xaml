@@ -1,0 +1,22 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:Kursach.Articles"
+              FontSize="14" 
+              FontFamily="{StaticResource RobotoRegular}"
+              Foreground="White"
+              Background="Aqua"
+              PagePadding="0">
+
+    <Paragraph>
+        <Image 
+            Source="Images/img-test.jpg" />
+        <Run FontSize="16">Image caption</Run>
+    </Paragraph>
+    
+    <Paragraph>
+        WPF, which stands for
+        <Bold>Windows Presentation Foundation</Bold> ,
+                    is Microsoft's latest approach to a GUI framework, used with the .NET framework.
+                    Some advantages include:
+    </Paragraph>
+    
+</FlowDocument>
